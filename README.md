@@ -1,9 +1,9 @@
-# Лабораторная 5: DOM, события, формы
+<img width="1628" height="871" alt="image" src="https://github.com/user-attachments/assets/4d906ac2-4de6-4362-a39a-f71bdeee861d" /># Лабораторная 5: DOM, события, формы
 
 Интерактивная панель управления складом мебельной мастерской поверх класса Store из лабы 4. Чистый JavaScript и DOM API, без фреймворков.
 
 **Автор:** Тоқабай Нұрали  
-**Репозиторий:** https://github.com/tokabai/dom-store-tokabai  
+**Репозиторий:** [https://github.com/tokabai/dom-store-tokabai ](https://github.com/nuralitokabai64-pixel/dom-store-tokabay) 
 **Сайт (GitHub Pages):** https://tokabai.github.io/dom-store-tokabai/
 
 ---
