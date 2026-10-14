@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учет материалов | Мастерская</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="workshop-layout">
+        <header class="masthead">
+            <div class="masthead-titles">
+                <h1>Мастерская мебели</h1>
+                <p>Система складского учета: материалы, фурнитура, изделия</p>
+            </div>
+            
+            <div class="masthead-stats">
+                <div class="stat-block highlight">
+                    <span class="label">Оценка склада</span>
+                    <strong class="value mono" id="liveTotal">0 ₸</strong>
+                </div>
+                <div class="stat-block">
+                    <span class="label">Номенклатура (SKU)</span>
+                    <strong class="value mono" id="itemsCount">0</strong>
+                </div>
+                <div class="stat-block">
+                    <span class="label">Кол-во единиц</span>
+                    <strong class="value mono" id="totalUnits">0</strong>
+                </div>
+            </div>
+        </header>
+
+        <main class="workspace">
+            
+            <!-- Левая колонка: Таблица -->
+            <section class="inventory-section">
+                <div class="section-header">
+                    <h2>Ведомость остатков</h2>
+                </div>
+                <div class="table-frame">
+                    <table class="inventory-table">
+                        <thead>
+                            <tr>
+                                <th>Наименование</th>
+                                <th class="txt-right">Цена за ед.</th>
+                                <th class="txt-center">Наличие</th>
+                                <th class="txt-right">Сумма</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                            <!-- JS Render -->
+                        </tbody>
+                    </table>
+                    <div id="emptyState" class="empty-state hidden">
+                        Склад пуст. Заполните номенклатуру.
+                    </div>
+                </div>
+            </section>
+
+            <aside class="action-sidebar">
+                <div class="form-container">
+                    <h2>Приходная накладная</h2>
+                    <form id="addProductForm" novalidate>
+                        <div class="input-row">
+                            <label for="productName">Название позиции</label>
+                            <input type="text" id="productName" name="name" placeholder="Фанера 15мм...">
+                            <span class="error-msg" id="nameError"></span>
+                        </div>
+
+                        <div class="input-row">
+                            <label for="productPrice">Закупочная цена (₸)</label>
+                            <input type="text" id="productPrice" name="price" placeholder="12000">
+                            <span class="error-msg" id="priceError"></span>
+                        </div>
+
+                        <div class="input-row">
+                            <label for="productQty">Количество</label>
+                            <input type="text" id="productQty" name="qty" placeholder="1" value="1">
+                            <span class="error-msg" id="qtyError"></span>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Внести в базу</button>
+                    </form>
+                    <div id="formSuccessMsg" class="success-alert hidden"></div>
+                </div>
+            </aside>
+
+        </main>
+    </div>
+
+    <template id="rowTemplate">
+        <tr>
+            <td class="cell-name fw-bold"></td>
+            <td class="cell-price txt-right mono text-muted"></td>
+            <td class="cell-qty txt-center">
+                <div class="controls">
+                    <button type="button" data-action="dec">−</button>
+                    <span class="val mono"></span>
+                    <button type="button" data-action="inc">+</button>
+                </div>
+            </td>
+            <td class="cell-sum txt-right mono fw-bold accent-txt"></td>
+            <td class="cell-action txt-right">
+                <button type="button" class="btn-delete" data-action="delete">✕ Удалить</button>
+            </td>
+        </tr>
+    </template>
+
+    <script src="./src/Store.js"></script>
+    <script src="./src/app.js"></script>
+</body>
+</html>
