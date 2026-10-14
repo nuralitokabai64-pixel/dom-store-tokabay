@@ -4,7 +4,7 @@
 
 **Автор:** Тоқабай Нұрали  
 **Репозиторий:** [https://github.com/tokabai/dom-store-tokabai ](https://github.com/nuralitokabai64-pixel/dom-store-tokabay) 
-**Сайт (GitHub Pages):** https://tokabai.github.io/dom-store-tokabai/
+**Сайт (GitHub Pages):** [https://tokabai.github.io/dom-store-tokabai/](https://nuralitokabai64-pixel.github.io/dom-store-tokabay/)
 
 ---
 
